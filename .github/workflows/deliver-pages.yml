@@ -30,7 +30,7 @@ jobs:
 
       - uses: subosito/flutter-action@v2
 
-      - run: flutter pub get && flutter build web
+      - run: flutter pub get && flutter build web --base-href /riverpod_generics_sandbox/
 
       - uses: actions/upload-pages-artifact@v3
         with:
