@@ -47,6 +47,10 @@ class MyHomePage extends ConsumerWidget {
         .read(preferenceNotifierProvider(Preference.counter).notifier)
         .update(counter + 1);
 
+    resetCounter() => ref
+        .read(preferenceNotifierProvider(Preference.counter).notifier)
+        .update(0);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -62,6 +66,10 @@ class MyHomePage extends ConsumerWidget {
             Text(
               '$counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+              onPressed: resetCounter,
+              child: const Text('Reset'),
             ),
           ],
         ),
